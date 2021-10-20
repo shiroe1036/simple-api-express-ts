@@ -60,7 +60,7 @@ export const Delete = async (req: any, res: any): Promise<any> => {
             error: false,
             message: tutorial
         });
-    } catch (error) {
+    } catch (error: any) {
         return res.status(400).json({
             error: true,
             message: error.message
