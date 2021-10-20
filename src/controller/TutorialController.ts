@@ -43,7 +43,7 @@ export const FindOne = async (req: any, res: any): Promise<any> => {
   try {
     const tutorial = await Tutorial.findOne({ _id: req.params.tutorial });
 
-    res.status(200).json({
+    res.status(200).json({ 
       error: false,
       message: tutorial,
     });
