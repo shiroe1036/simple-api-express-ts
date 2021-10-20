@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import mongodb from "mongodb";
 import { TutorialSchema } from "../model/Tutorials";
 
 const Tutorial = mongoose.model("Tutorial", TutorialSchema);

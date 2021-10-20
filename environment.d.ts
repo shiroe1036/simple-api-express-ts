@@ -5,7 +5,9 @@ declare global {
       NODE_ENV: "development" | "production";
       PORT: number;
       PWD: string;
-      URL_MONGODB: "mongodb://127.0.0.1:27017/tutorials";
+      URL_MONGODB: string;
+      SECRETE: string;
+      JWT_REFRESHE_EXPIRATION: number;
     }
   }
 }
