@@ -3,10 +3,9 @@ declare global {
     interface ProcessEnv {
       GITHUB_AUTH_TOKEN: string;
       NODE_ENV: "development" | "production";
-      PORT: 8080;
+      PORT: number;
       PWD: string;
       URL_MONGODB: "mongodb://127.0.0.1:27017/tutorials";
-      PORT_data: 8080;
     }
   }
 }

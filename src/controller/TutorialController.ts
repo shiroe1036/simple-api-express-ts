@@ -51,3 +51,19 @@ export const FindOne = async (req: any, res: any): Promise<any> => {
         }); 
     }
 }
+
+export const Delete = async (req: any, res: any): Promise<any> => {
+    try {
+        const tutorial = await Tutorial.deleteOne({_id: req.params.tutorial});
+
+        res.status(200).json({
+            error: false,
+            message: tutorial
+        });
+    } catch (error) {
+        return res.status(400).json({
+            error: true,
+            message: error.message
+        }); 
+    }
+}

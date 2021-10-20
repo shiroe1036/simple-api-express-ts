@@ -12,6 +12,7 @@ const app = express();
 mongoose.Promise = global.Promise;
 
 const mongdbUrl: string = process.env.URL_MONGODB
+process.env.PORT = 8000;
 
 mongoose.connect(mongdbUrl).then(() =>
     console.log('Notre base de donnée marche bien :) ;) ')
@@ -29,9 +30,7 @@ app.get('/', (req, res) =>
     res.send(`notre serveur a été demarer sur le port : ${process.env.PORT}`)
 );
 
-console.log(process.env.PORT_data)
-
-app.listen(8000, () => {
-    console.log(`Notre serveur est en marche dans le port 8000`)
+app.listen(process.env.PORT, () => {
+    console.log(`Notre serveur est en marche dans le port ${process.env.PORT}`)
 });
 
