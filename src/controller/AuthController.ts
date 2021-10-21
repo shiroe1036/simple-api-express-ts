@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 import { UserSchema } from '../model/User';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import { RefreshToken } from '../model/RefreshToken';
+// import { RefreshTokenSchema } from '../model/RefreshToken';
+
+// const RefreshToken = mongoose.model("RefreshToken", RefreshTokenSchema);
 
 const User = mongoose.model("User", UserSchema);
 
@@ -49,6 +53,8 @@ export const signin = async (req: any, res: any): Promise<any> => {
         let token = jwt.sign({ id: signin._id }, process.env.SECRETE, {
             expiresIn: 86400 //24h
         });
+
+        // let refreshToken = await RefreshToken.createToken()
 
         res.status(200).json({
             error: false,
